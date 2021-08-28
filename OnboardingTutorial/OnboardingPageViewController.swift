@@ -23,6 +23,14 @@ class OnboardingPageViewController: UIPageViewController {
             setViewControllers([firstViewController], direction: .forward, animated: true, completion: nil)
         }
     }
+    
+    func turnPage(to index: Int) {
+        currentIndex = index
+        if let currentController = contentViewController(at: index) {
+            setViewControllers([currentController], direction: .forward, animated: true)
+            self.pageViewControllerDelagate?.turnPageController(to: currentIndex)
+        }
+    }
 
 }
 

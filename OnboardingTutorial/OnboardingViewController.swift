@@ -17,6 +17,7 @@ class OnboardingViewController: UIViewController {
     }
     
     @IBAction func nextButtonTapped(_ sender: Any) {
+        onBoardingPageViewController?.turnPage(to: pageControl.currentPage + 1)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
